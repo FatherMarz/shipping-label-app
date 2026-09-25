@@ -1,0 +1,37 @@
+# Shipping Labels (Modul4r)
+
+> Free shipping label generator. Builds a printable sender/receiver address
+> label for Canada and US addresses, printed straight from the browser.
+
+The whole tool is one page. Fill in the sender and receiver address, then
+print. No signup, no account, nothing sent to a server.
+
+## What it does
+
+- Captures sender and receiver name, street address, city, province or
+  state, and postal or ZIP code.
+- Supports Canada (13 provinces/territories) and the US (50 states plus DC).
+- Renders a FROM/TO address label instantly as you type.
+- Prints from the browser's own print dialog. Best results: Letter size,
+  100% scale.
+
+## What it does not do
+
+- No carrier or courier integration. The label is a plain address format,
+  not a carrier-specific barcode or tracking number. Pair it with a tracking
+  label from Canada Post, USPS, UPS, FedEx or any other courier for the
+  actual shipment.
+- No account, no saved address book, no data sent to a server: everything
+  runs in the browser.
+
+## Cost
+
+Free.
+
+## Links
+
+- [Open the generator](https://labels.modul4r.com/): the tool itself.
+
+## Contact
+
+A Modul4r tool. See https://modul4r.com/ for other projects.
