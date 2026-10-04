@@ -1,28 +1,24 @@
 # Shipping Label Generator
 
-A free, no-signup shipping label generator for Canada and US addresses. Fill in sender + receiver, hit print.
+Free shipping label generator for Canada and US addresses. Enter sender and receiver, then print. Live at [labels.modul4r.com](https://labels.modul4r.com).
 
-Live at **[labels.modul4r.com](https://labels.modul4r.com)**.
+Addresses stay in the browser. There is no backend. The page loads Google Analytics for page views.
 
-> I like making small things I can use all the time.
-
-## Run It
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
-
-```bash
-npm run build
-```
+Other scripts: `npm run build`, `npm run lint`, `npm run preview`.
 
 ## Stack
 
-React + Vite. No backend, no tracking, no analytics.
+React and Vite.
 
 ## License
 
 [MIT](./LICENSE)
+
+Built by Marcello Delcaro, AI-assisted.

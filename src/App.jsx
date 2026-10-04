@@ -81,6 +81,25 @@ const COUNTRY_LABELS = {
   US: 'US',
 }
 
+const EMPTY_ADDRESS = {
+  name: '',
+  address: '',
+  city: '',
+  province: '',
+  postal: '',
+  country: 'CA',
+}
+
+function formatLocation({ city, province, country }) {
+  return [
+    city,
+    province,
+    city && province ? COUNTRY_LABELS[country] || country : '',
+  ]
+    .filter(Boolean)
+    .join(', ')
+}
+
 function AddressForm({ title, data, setData }) {
   const update = (field) => (e) =>
     setData({ ...data, [field]: e.target.value })
@@ -166,27 +185,8 @@ function AddressForm({ title, data, setData }) {
 }
 
 function App() {
-  const [sender, setSender] = useState({
-    name: '',
-    address: '',
-    city: '',
-    province: '',
-    postal: '',
-    country: 'CA',
-  })
-
-  const [receiver, setReceiver] = useState({
-    name: '',
-    address: '',
-    city: '',
-    province: '',
-    postal: '',
-    country: 'CA',
-  })
-
-  const handlePrint = () => {
-    window.print()
-  }
+  const [sender, setSender] = useState(EMPTY_ADDRESS)
+  const [receiver, setReceiver] = useState(EMPTY_ADDRESS)
 
   return (
     <div className="app">
@@ -209,7 +209,7 @@ function App() {
 
         <div className="preview-head no-print">
           <span className="preview-tag">Label Preview</span>
-          <button className="primary" onClick={handlePrint}>
+          <button className="primary" onClick={() => window.print()}>
             Print Label
           </button>
         </div>
@@ -222,17 +222,7 @@ function App() {
               <div className="from-body">
                 <div>{sender.name}</div>
                 <div>{sender.address}</div>
-                <div>
-                  {[
-                    sender.city,
-                    sender.province,
-                    sender.city && sender.province
-                      ? COUNTRY_LABELS[sender.country] || sender.country
-                      : '',
-                  ]
-                    .filter(Boolean)
-                    .join(', ')}
-                </div>
+                <div>{formatLocation(sender)}</div>
                 <div>{sender.postal}</div>
               </div>
             </div>
@@ -244,17 +234,7 @@ function App() {
 
               <div className="receiver-body">
                 <div>{receiver.address}</div>
-                <div>
-                  {[
-                    receiver.city,
-                    receiver.province,
-                    receiver.city && receiver.province
-                      ? COUNTRY_LABELS[receiver.country] || receiver.country
-                      : '',
-                  ]
-                    .filter(Boolean)
-                    .join(', ')}
-                </div>
+                <div>{formatLocation(receiver)}</div>
                 <div className="receiver-postal">{receiver.postal}</div>
               </div>
             </div>
