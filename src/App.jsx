@@ -255,7 +255,9 @@ function App() {
         >
           A Modul4r Tool · <strong>modul4r.com</strong> →
         </a>
-        <span>Modul4r</span>
+        <button type="button" className="foot-brand foot-cookie" data-cookie-settings>
+          Cookie&nbsp;settings
+        </button>
       </footer>
     </div>
   )
